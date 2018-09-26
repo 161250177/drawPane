@@ -126,9 +126,9 @@ public class mainFrame extends JFrame{
                 shape=recognitionService.recogntion(shape);
                 clearOldShape(shape);
                 addShape(shape);
-                for(int i=0;i<arrayService.getActualLength(shapes);i++)
+                for(int i=0;i<arrayService.getActualLength(shapes);i++){
                 drawNewShape(shapes[i]);
-                addTip(shape);
+                addTip(shapes[i]);}
                 shape=new shape();
             }
         });
@@ -166,7 +166,7 @@ public class mainFrame extends JFrame{
         });
 
         /**
-         * 清楚按钮加上监听
+         * 清除按钮加上监听
          */
         clearButton.addActionListener(new ActionListener() {
             @Override
