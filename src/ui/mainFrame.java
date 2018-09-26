@@ -74,7 +74,13 @@ public class mainFrame extends JFrame{
 
     }
 
+    /**
+     * 添加监听
+     */
     public void addListener(){
+        /**
+         * 鼠标点击监听，记录端点
+         */
         mainPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -87,13 +93,16 @@ public class mainFrame extends JFrame{
 
         });
 
+        /**
+         * 鼠标拖动监听
+         */
         mainPanel.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
                 endX=e.getX();
                 endY=e.getY();
 
-                if(endX<shape.getMinX()) shape.setMinX(endX);
+                if(endX<shape.getMinX()) shape.setMinX(endX);//计算x最小点
                 if(endX>shape.getMaxX()) shape.setMaxX(endX);
                 if(endY<shape.getMinY()) shape.setMinY(endY);
                 if(endY>shape.getMaxY()) shape.setMaxY(endY);
@@ -108,6 +117,9 @@ public class mainFrame extends JFrame{
             }
         });
 
+        /**
+         * 确认完成按钮添加监听
+         */
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -153,6 +165,9 @@ public class mainFrame extends JFrame{
             }
         });
 
+        /**
+         * 清楚按钮加上监听
+         */
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -182,7 +197,7 @@ public class mainFrame extends JFrame{
     public void clearOldShape(shape shape){
         Graphics graphics=mainPanel.getGraphics();
 
-        ((Graphics2D)graphics).setColor(new Color(255,255,255));
+        ((Graphics2D)graphics).setColor(new Color(255,255,255));//画笔颜色为白色即为擦除
         ((Graphics2D)graphics).setStroke(new BasicStroke(3));
 
         startX=shape.getPoints()[0].getX();
@@ -199,12 +214,12 @@ public class mainFrame extends JFrame{
     }
 
     /**
-     * 擦除Tip
+     * 读取过程中需要擦除画板上现有的标识
      */
 
     public void clearTip(shape shape){
         Graphics graphics=mainPanel.getGraphics();
-        graphics.setColor(new Color(255,255,255));
+        graphics.setColor(new Color(255,255,255));//画笔颜色为白色即为擦除
         ((Graphics2D)graphics).setStroke(new BasicStroke(3));
         ((Graphics2D)graphics).drawString(shape.getType(),(shape.getMaxX()+shape.getMinX())/2-3*(shape.getType().length()),(shape.getMaxY()+shape.getMinY())/2);
     }
@@ -238,13 +253,13 @@ public class mainFrame extends JFrame{
     }
 
     /**
-     * 擦除新图
+     * 读取过程中需要擦除画板上现有的图形
      * @param shape
      */
     public void clearNewShape(shape shape){
         Graphics graphics=mainPanel.getGraphics();
 
-        ((Graphics2D)graphics).setColor(new Color(255,255,255));
+        ((Graphics2D)graphics).setColor(new Color(255,255,255));//画笔颜色为白色即为擦除
         ((Graphics2D)graphics).setStroke(new BasicStroke(3));
 
         switch (shape.getType()){

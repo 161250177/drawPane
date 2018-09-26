@@ -1,7 +1,10 @@
 package logicService;
 
-import entity.shape;
+/**
+ * 逻辑层读写操作，从数据层得到的数据转化为展示层可用的数据
+ */
 
+import entity.shape;
 public interface saveAndReadService {
     /**
      * 将shape数组对象存储的方法

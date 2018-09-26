@@ -5,11 +5,18 @@ import logicService.calculateService;
 import entity.point;
 
 import java.text.DecimalFormat;
-
+/**
+ * 有关图形计算的方法
+ */
 public class calculateServiceImpl implements calculateService {
     arrayService arrayService=new arrayServiceImpl();
 
-
+    /**
+     * 计算两点之间的距离
+     * @param point1 点1
+     * @param point2 点2
+     * @return
+     */
     @Override
     public double calculateDistanceBetweenPoints(point point1, point point2) {
         double distanceX=Math.pow(point1.getX()-point2.getX(),2);
@@ -21,7 +28,12 @@ public class calculateServiceImpl implements calculateService {
 
         return result;
     }
-
+    /**
+     * 计算两点构成直线的斜率
+     * @param point1 点1
+     * @param point2 点2
+     * @return
+     */
     @Override
     public double calculateT(point point1, point point2) {
         int x0=point1.getX();

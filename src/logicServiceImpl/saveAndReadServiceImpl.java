@@ -1,5 +1,9 @@
 package logicServiceImpl;
 
+/**
+ * 逻辑层读写操作，从数据层得到的数据转化为展示层可用的数据
+ */
+
 import entity.shape;
 import logicService.saveAndReadService;
 import dataService.*;

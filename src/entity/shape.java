@@ -20,7 +20,7 @@ public class shape implements Serializable {
 
     public shape(){
         points=new point[maxPointsNum];
-        endpoints=new point[100];//最多4个端点，如果是圆也只存放4个端点
+        endpoints=new point[100];
         for(int i=0;i<maxPointsNum;i++){
             points[i]=null;
         }

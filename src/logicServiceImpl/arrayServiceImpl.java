@@ -4,7 +4,15 @@ import logicService.arrayService;
 
 import java.io.Serializable;
 
+/**
+ * 有关数组操作的实现
+ */
 public class arrayServiceImpl implements arrayService,Serializable {
+    /**
+     * 往array末尾添加元素的方法
+     * @param array
+     * @param element
+     */
     @Override
     public void insertElement(Object[] array,Object element) {
         int oldLength=array.length;

@@ -10,7 +10,11 @@ public class reshapeServiceImpl implements reshapeService {
     double t1,t2=0;
     point point1=new point(0,0),point2=new point(0,0),point3=new point(0,0),point4=new point(0,0);
     calculateService calculateService=new calculateServiceImpl();
-
+    /**
+     *规范化圆形的方法
+     * @param shape
+     * @return 圆心坐标x，y和半径长度
+     */
     @Override
     public int[] reshapeCircle(shape shape) {
         x0=(shape.getMaxX()+shape.getMinX())/2;
@@ -18,7 +22,11 @@ public class reshapeServiceImpl implements reshapeService {
         int r= (int)calculateService.calculateDistanceBetweenPoints(new point(x0,y0),new point(shape.getEndpoints()[0].getX(),shape.getEndpoints()[0].getY()));
         int[] result={x0,y0,r};
         return result;
-    }
+    }    /**
+     * 规范化矩形的方法
+     * @param shape
+     * @return 四个端点
+     */
 
     @Override
     public point[] reshapeRectangle(shape shape) {

@@ -5,6 +5,9 @@ import logicService.arrayService;
 import logicService.calculateService;
 import logicService.recognitionService;
 
+/**
+ * 识别图形
+ */
 public class recognitionServiceImpl implements recognitionService {
     arrayService arrayService=new arrayServiceImpl();
     calculateService calculateService=new calculateServiceImpl();

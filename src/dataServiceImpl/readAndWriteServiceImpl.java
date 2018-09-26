@@ -9,8 +9,10 @@ import java.io.*;
 
 public class readAndWriteServiceImpl implements readAndWriteService {
     File file=new File("src/data.txt");
-    arrayService arrayService=new arrayServiceImpl();
-
+    /**
+     * 往文件里写对象的方法
+     * @param object
+     */
     @Override
     public void write(Object object) {
         ObjectOutputStream oos;
@@ -32,7 +34,10 @@ public class readAndWriteServiceImpl implements readAndWriteService {
             e1.printStackTrace();
         }
     }
-
+    /**
+     * 从文件中读取对象的方法
+     * @return
+     */
     @Override
     public Object read() {
 
